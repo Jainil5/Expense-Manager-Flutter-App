@@ -1,0 +1,3 @@
+FTB #21 for deleting item from card
+
+Scroll view widget around page
