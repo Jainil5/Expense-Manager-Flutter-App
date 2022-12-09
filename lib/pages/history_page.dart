@@ -2,16 +2,11 @@ import 'package:fap7/widgets/drawer.dart';
 import 'package:fap7/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
-class HistoryPage extends StatefulWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+class HistoryPage extends StatelessWidget {
+  var listAmount;
+  var listReason;
 
-  @override
-  State<HistoryPage> createState() => _HistoryPageState();
-}
-
-class _HistoryPageState extends State<HistoryPage> {
-
-
+  HistoryPage(  {Key? key,  required this.listAmount, required this.listReason}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,7 +29,7 @@ class _HistoryPageState extends State<HistoryPage> {
         ),
         body: Center(
           child:ListView.builder(
-            itemCount: 20,
+            itemCount: listAmount.length,
             itemBuilder: (context, position) {
               return Card(
                 child: Padding(
@@ -42,10 +37,8 @@ class _HistoryPageState extends State<HistoryPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        position.toString(),
-                      ),
-                      const Text("ruppees"),
+                      Text(listAmount[position]),
+                      Text(listReason[position]),
                     ],
                   ),
                 ),
@@ -54,6 +47,6 @@ class _HistoryPageState extends State<HistoryPage> {
           ),
         ),
       ),
-    );
+    );;
   }
 }

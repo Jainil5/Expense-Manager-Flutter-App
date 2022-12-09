@@ -17,11 +17,12 @@ class _HomePageState extends State<HomePage> {
   TextEditingController amountController = TextEditingController();
   TextEditingController reasonController = TextEditingController();
 
-  var listAmount = [];
-  var listReason = [];
+  late List<String> listAmount;
+  late List<String> listReason;
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -86,8 +87,17 @@ class _HomePageState extends State<HomePage> {
                         );
                       }
                       else{
+                        Fluttertoast.showToast(
+                          msg: 'Added successfully.',
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.BOTTOM,
+                          backgroundColor: Colors.grey,
+                          textColor: Colors.black,
+                          timeInSecForIosWeb: 1,
+                        );
                         listAmount.add(amountController.text.toString());
                         listReason.add(reasonController.text.toString());
+
                         amountController.clear();
                         reasonController.clear();
                       }
@@ -99,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 FloatingActionButton.extended(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HistoryPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryPage(listAmount: [], listReason: [],)));
                   },
                   backgroundColor: Colors.red,
                   label: const Text("View expenses"),
@@ -112,6 +122,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
 
   void onHomePressed() {
     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));

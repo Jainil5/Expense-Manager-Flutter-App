@@ -1,6 +1,7 @@
 import 'package:fap7/pages/about_page.dart';
 import 'package:fap7/pages/history_page.dart';
 import 'package:fap7/pages/home_page.dart';
+import 'package:fap7/pages/login.dart';
 import 'package:fap7/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
@@ -33,19 +34,7 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Expenses'),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const HistoryPage()));
-            },
-          ),
-          ListTile(
-            title: const Text('Stats'),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const HistoryPage()));
-            },
-          ),
-          ListTile(
-            title: const Text('Profile'),
+            title: const Text('My Profile'),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage()));
             },
@@ -54,6 +43,12 @@ class MyDrawer extends StatelessWidget {
             title: const Text('About Us'),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUsPage()));
+            },
+          ),
+          ListTile(
+            title: const Text('Sign Out'),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
             },
           ),
         ],
