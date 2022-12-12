@@ -1,5 +1,4 @@
 import 'package:fap7/pages/about_page.dart';
-import 'package:fap7/pages/history_page.dart';
 import 'package:fap7/pages/home_page.dart';
 import 'package:fap7/pages/login.dart';
 import 'package:fap7/pages/profile_page.dart';
