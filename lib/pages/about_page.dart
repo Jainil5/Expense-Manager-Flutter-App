@@ -17,21 +17,10 @@ class _AboutUsPageState extends State<AboutUsPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        drawer: const MyDrawer(),
         appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text("Expense Manager"),
-              IconButton(
-                icon: const Icon(Icons.home_filled),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
-                },
-              ),
-            ],
-          ),
+          title: const Text("Daily"),
         ),
+        endDrawer: const MyDrawer(),
         body:SingleChildScrollView(
             child: Stack(
             children: <Widget>[
